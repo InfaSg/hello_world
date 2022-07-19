@@ -1,34 +1,24 @@
 {
- "taskset_name": "Taskset-Name",
-  "taskset_subject": "Math",
-  "taskset_grade": 2,
+ "taskset_name": "Taskset-Name-Test",
+  "taskset_subject": "Englisch",
+  "taskset_grade": 1,
   "tasks": [
-   {
-      "task_type": "Buchstabieren",
-      "task_reward": 2,
-      "left_to_solve": 3,
-      "lama_text": "Test Text",
-      "first_Letter_caps": 0,
-      "correcting_modus": 0,
-      "multiple_points": 4,
-      "woerter": {
-        "Auto": "https://github.com/handitosb/lamaapps/blob/main/Bilder_Test/Auto.png?raw=true",
-        "Baum": "https://github.com/handitosb/lamaapps/blob/main/Bilder_Test/Baum.png?raw=true",
-        "Biene": "https://github.com/handitosb/lamaapps/blob/main/Bilder_Test/Biene.png?raw=true",
-        "Faultier": "https://github.com/handitosb/lamaapps/blob/main/Bilder_Test/Faultier.png?raw=true",
-        "Fisch": "https://github.com/handitosb/lamaapps/blob/main/Bilder_Test/Fisch.png?raw=true",
-        "Frosch": "https://github.com/handitosb/lamaapps/blob/main/Bilder_Test/Frosch.png?raw=true",
-        "Hund": "https://github.com/handitosb/lamaapps/blob/main/Bilder_Test/Hund.png?raw=true",
-        "Igel": "https://github.com/handitosb/lamaapps/blob/main/Bilder_Test/Igel.png?raw=true",
-        "Jaguar": "https://github.com/handitosb/lamaapps/blob/main/Bilder_Test/Jaguar.png?raw=true",
-        "Krokodil": "https://github.com/handitosb/lamaapps/blob/main/Bilder_Test/Krokodil.png?raw=true",
-        "Küken": "https://github.com/handitosb/lamaapps/blob/main/Bilder_Test/Küken.png?raw=true",
-        "Regenwurm": "https://github.com/handitosb/lamaapps/blob/main/Bilder_Test/Regenwurm.png?raw=true",
-        "Robbe": "https://github.com/handitosb/lamaapps/blob/main/Bilder_Test/Robbe.png?raw=true",
-        "Schmetterling": "https://github.com/handitosb/lamaapps/blob/main/Bilder_Test/Schmetterling.png?raw=true",
-        "Schnecke": "https://github.com/handitosb/lamaapps/blob/main/Bilder_Test/Schnecke.png?raw=true"
-
-      }
-   }
-  ]
+        {
+            "task_type":"VocableTest",
+            "task_reward":5,
+            "lama_text": "Translate the shown word!",
+            "left_to_solve": 3,
+            "wordPairs": [{"word":"house","translation":"Haus"}, {"word":"sun", "translation":"Sonne"}],
+            "randomizeSide": true
+          },
+           {
+           "task_type":"4Cards",
+            "task_reward":2,
+            "question":"What does 'apple' mean in german?",
+            "lama_text":"Tap the right Answer!",
+            "left_to_solve": 3,
+            "right_answer":"Apfel",
+             "wrong_answers":["Auto", "Buch", "Kran"]
+             }
+        ]
 }
