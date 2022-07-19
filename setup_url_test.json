@@ -1,4 +1,4 @@
 {
-"userListUrl" : "https://github.com/InfaSg/hello_world/blob/master/userlist_url_test.json",
-"tasksetUrl" : "https://github.com/InfaSg/hello_world/blob/master/taskset_url_test.json"
+"userListUrl" : "https://raw.githubusercontent.com/InfaSg/hello_world/master/userlist_url_test.json?token=GHSAT0AAAAAABUIAM3QNZ3MBQQKTWKS2IVSYWWVH3Q",
+"tasksetUrl" : "https://raw.githubusercontent.com/InfaSg/hello_world/master/taskset_url_test.json?token=GHSAT0AAAAAABUIAM3QPWOOYHUZFP7XX4J2YWWVHRQ"
 }
