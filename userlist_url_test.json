@@ -12,7 +12,7 @@
     },
     {
       "name": "Herr Uwe",
-      "passwort": "Uwe",
+      "password": "Uwe",
       "isAdmin": "1"
     }
     ]
