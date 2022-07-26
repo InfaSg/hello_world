@@ -14,7 +14,7 @@
       "name": "Herr Uwe",
       "password": "Uwe",
       "grade": 2,
-      "isAdmin": "1"
+      "isAdmin": "ja"
     }
     ]
 }
