@@ -13,8 +13,8 @@
     {
       "name": "Herr Uwe",
       "password": "Uwe",
-      "grade": 2,
-      "isAdmin": "ja"
+      "isAdmin": "ja",
+      "grade": 1
     }
     ]
 }
