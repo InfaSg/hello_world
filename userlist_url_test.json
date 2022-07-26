@@ -9,6 +9,10 @@
       "name": "Tim",
       "password": "Tim",
       "grade": 2
-    }
+    },
+    {
+      "name": "Herr Uwe",
+      "passwort": "Uwe",
+      "isAdmin": "1"
     ]
 }
