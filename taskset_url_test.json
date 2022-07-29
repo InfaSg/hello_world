@@ -17,7 +17,7 @@
             "question":"What does 'apple' mean in german?",
             "lama_text":"Tap the right Answer!",
             "left_to_solve": 3,
-            "right_answwer":"Apfel",
+            "right_answswer":"Apfel",
              "wrong_answers":["Auto", "Buch", "Kran"]
              }
         ]
