@@ -1,0 +1,20 @@
+{
+  "users" : [
+    {
+      "namde": "Max",
+      "password": "Max",
+      "grade": 1
+    }, 
+    {
+      "name": "Tim",
+      "password": "Tim",
+      "grade": 2
+    },
+    {
+      "name": "HerrUwe",
+      "password": "Uwe",
+      "isAdmin": "ja",
+      "grade": 1
+    }
+    ]
+}
