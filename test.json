@@ -1,0 +1,27 @@
+{
+  "taskset_url": {
+    "id": 13,
+    "url": "https://raw.githubusercontent.com/thm-mni-ii/lama/master/lama_app/assets/standardTasksets/deutsch/deutsch1.json"
+  },
+  "is_in_Pool": true,
+  "taskset_name": "Deutsch 2",
+  "taskset_subject": "Deutsch",
+  "taskset_grade": 2,
+  "taskset_randomize_order": true,
+  "tasks": [
+    {
+      "id": "[#5a805]",
+      "task_type": "TaskType.fourCards",
+      "task_reward": 2,
+      "question": "lesen",
+      "left_to_solve": 3,
+      "lama_text": "Welche Rechtschreibung ist korrekt?",
+      "right_answer": "nämlich",
+      "wrong_answers": [
+        "nähmlich",
+        "nemlich",
+        "nehmlich"
+      ]
+    }
+  ]
+}
