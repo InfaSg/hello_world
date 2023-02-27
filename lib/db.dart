@@ -705,33 +705,34 @@ class DatabaseProvider {
   /// {@return} <int> which shows the number of deleted rows
   Future<int?> deleteUserHasAchievement(
       User user, Achievement achievement) async {
-    if (kIsWeb) {
-      var userHasAchievementBox = await Hive.openBox('userHasAchievements');
-      MapEntry<dynamic, dynamic> uhaEntry;
-      try {
-        uhaEntry = userHasAchievementBox
-            .toMap()
-            .entries
-            .where((element) =>
-                element.value[UserHasAchievementsFields.columnUserId] ==
-                user.id)
-            .where((element) =>
-                element.value[UserHasAchievementsFields.columnAchievementId] ==
-                achievement.id)
-            .single;
-        await userHasAchievementBox.delete(uhaEntry.key);
-      } on StateError catch (e) {
-        print('$e : No valid userHasAchievement entry to delete found');
-      }
-    } else {
-      final db = await (database);
-      return await db?.delete(tableUserHasAchievements,
-          where:
-              "${UserHasAchievementsFields.columnUserId} = ? and ${UserHasAchievementsFields.columnAchievementId} = ? ",
-          whereArgs: [user.id, achievement.id]);
+    var userHasAchievementBox = await Hive.openBox('userHasAchievements');
+    MapEntry<dynamic, dynamic> uhaEntry;
+    try {
+      uhaEntry = userHasAchievementBox
+          .toMap()
+          .entries
+          .where((element) =>
+              element.value[UserHasAchievementsFields.columnUserId] ==
+              user.id)
+          .where((element) =>
+              element.value[UserHasAchievementsFields.columnAchievementId] ==
+              achievement.id)
+          .single;
+      await userHasAchievementBox.delete(uhaEntry.key);
+    } on StateError catch (e) {
+      print('$e : No valid userHasAchievement entry to delete found');
     }
   }
-
+  
+  Future<int?> deleteUserHasAchievement(
+    User user, Achievement achievement) async {
+    final db = await (database);
+    return await db?.delete(tableUserHasAchievements,
+        where:
+            "${UserHasAchievementsFields.columnUserId} = ? and ${UserHasAchievementsFields.columnAchievementId} = ? ",
+        whereArgs: [user.id, achievement.id]);
+  }
+  
   /// delete a game in table Game
   ///
   /// {@param} int id
