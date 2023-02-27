@@ -729,7 +729,8 @@ class DatabaseProvider {
     final db = await (database);
     return await db?.delete(tableUserHasAchievements,
         where:
-            "${UserHasAchievementsFields.columnUserId} = ? and ${UserHasAchievementsFields.columnAchievementId} = ? ",
+            "${UserHasAchievementsFields.columnUserId} = ? and 
+            ${UserHasAchievementsFields.columnAchievementId} = ? ",
         whereArgs: [user.id, achievement.id]);
   }
   
