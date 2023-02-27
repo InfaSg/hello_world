@@ -259,26 +259,12 @@ class DatabaseProvider {
   /// {@return} <List<Game>>
   Future<List<Game>> getGames() async {
     List<Game> gameList = <Game>[];
-    if (kIsWeb) {
-      var gameBox = await Hive.openBox('games');
-
-      gameBox.toMap().forEach((key, value) {
-        Game game = Game.fromMap(value);
-        game.id = key;
-        gameList.add(game);
-      });
-    } else {
-      final db = await (database);
-
-      var games = await db?.query(tableGames,
-          columns: [GamesFields.columnGamesId, GamesFields.columnGamesName]);
-
-      games?.forEach((currentGame) {
-        Game game = Game.fromMap(currentGame);
-
-        gameList.add(game);
-      });
-    }
+    var gameBox = await Hive.openBox('games');
+    gameBox.toMap().forEach((key, value) {
+      Game game = Game.fromMap(value);
+      game.id = key;
+      gameList.add(game);
+    });
     return gameList;
   }
 
@@ -581,16 +567,10 @@ class DatabaseProvider {
   ///
   /// {@return} <Game> with the autoincremented id
   Future<Game> insertGame(Game game) async {
-    if (kIsWeb) {
-      var gameBox = await Hive.openBox('games');
-      game.id = createId(gameBox);
-      gameBox.put(game.id, game.toMap());
-      return game;
-    } else {
-      final db = await (database);
-      game.id = await db?.insert(tableGames, game.toMap());
-      return game;
-    }
+    var gameBox = await Hive.openBox('games');
+    game.id = createId(gameBox);
+    gameBox.put(game.id, game.toMap());
+    return game;
   }
 
   /// insert an new Highscore in the table Highscore
@@ -1120,15 +1100,8 @@ class DatabaseProvider {
   ///
   /// {@return} <int> which shows the number of updated rows
   Future<int?> updateGame(Game game) async {
-    if (kIsWeb) {
-      var gameBox = await Hive.openBox('games');
-      await gameBox.put(game.id, game.toMap());
-    } else {
-      final db = await (database);
-
-      return await db?.update(tableGames, game.toMap(),
-          where: "${GamesFields.columnGamesId} = ?", whereArgs: [game.id]);
-    }
+    var gameBox = await Hive.openBox('games');
+    await gameBox.put(game.id, game.toMap());
   }
 
   /// update a highscore in table Highscore
